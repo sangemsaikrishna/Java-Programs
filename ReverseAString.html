@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse A String</title>
+    <style>
+        #field
+        {
+            width: 30%;
+            height: 500px;
+            margin: 50px;
+            border: 0px;
+            border-radius: 10px;
+            background-color: aquamarine;
+            box-shadow: 8px 8px 10px black;
+        }
+        #ip
+        {
+            font-size: 40px;
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: lightcyan;
+            border: 0px;
+            outline: 0px;
+            box-shadow: 2px 2px 5px black;
+        }
+        #button
+        {
+            font-size: 40px;
+            padding: 30px;
+            border-radius: 10px;
+            border: 0px;
+            outline: 0px;
+            box-shadow: 2px 2px 5px black;
+            margin: 10px;
+        }
+        #op
+        {
+            font-size: 40px;
+            padding: 30px;
+            color: blue;
+        }
+        h1
+        {
+            text-shadow: 10px 2px 10px black;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <fieldset id="field">
+            <h1><ins>REVERSE A STRING</ins></h1>
+            <input type="text" placeholder="Enter String" id="ip">
+            <br><br>
+            <input type="button" value="ReverseANumber" onclick="reversingAString1()" id="button">
+            <p id="op"></p>
+        </fieldset>
+    </center>
+    <script>
+        // inbuild method 
+        function reversingAString()
+        {
+            let number = document.getElementById('ip')
+            let str = number.value
+            let newStr = str.split('') // to split the string to individual letters
+            let op = document.getElementById('op')
+
+            op.innerText = newStr.reverse().join('') //to reverse a string and join letters
+
+            // console print
+            console.log(newStr.reverse().join(''))
+            console.log(newStr.reverse().join(''))
+        }
+        
+        // using forloop
+        function reversingAString1()
+        {
+            let number = document.getElementById('ip')
+            let num = number.value
+            let sLength = num.length 
+            let op = document.getElementById('op')
+            var revStr = ""
+
+            for (let i = sLength - 1;i >= 0;i-- )
+            {
+                revStr += num[i]
+            }
+            op.innerText = "Reversed String : "+revStr
+        }
+    </script>
+</body>
+</html>
