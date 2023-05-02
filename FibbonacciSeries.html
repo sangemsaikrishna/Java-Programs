@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibbonacci Series</title>
+    <style>
+        #field
+        {
+            width: 30%;
+            height: 530px;
+            margin: 50px;
+            border: 0px;
+            border-radius: 10px;
+            background-color: aquamarine;
+            box-shadow: 8px 8px 10px black;
+        }
+        #min,#max
+        {
+            font-size: 40px;
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: lightcyan;
+            border: 0px;
+            outline: 0px;
+            box-shadow: 2px 2px 5px black;
+        }
+        #button
+        {
+            font-size: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            border: 0px;
+            outline: 0px;
+            box-shadow: 2px 2px 5px black;
+            margin: 10px;
+        }
+        #op
+        {
+            font-size: 40px;
+            padding: 0px;
+            color: blue;
+            margin-top: 10px;
+        }
+        h1
+        {
+            text-shadow: 10px 2px 10px black;
+        }
+        #fs
+        {
+            padding: 10px;
+            position: relative;
+            left: 220px;
+            bottom: 60px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <fieldset id="field">
+            <h1><ins>FIBBONACCI SERIES</ins></h1>
+            <a href="FibbonacciSeries1.html"><input type="button" value="FS" id="fs"></a>
+            <input type="number" placeholder="Enter MinRange" id="min">
+            <br><br>
+            <input type="number" placeholder="Enter MaxRange" id="max">
+            <br><br>
+            <input type="button" value="Fibbonacci" onclick="fibbonacciSeries()" id="button">
+            <p id="op"></p>
+        </fieldset>
+        <h1 style="color: red;">Open console to view complete result</h1>
+    </center>
+    <script>
+        function fibbonacciSeries()
+        {
+            var min = document.getElementById('min').value
+            var max = document.getElementById('max').value
+            var op = document.getElementById('op') 
+            var a = 0
+            var b = 1
+            var c = 0
+
+            for (var i = 1;i <= max;i ++)
+            {
+                a = b
+                b = c
+                c = a + b
+                op.innerText = c
+                if (c >= min) {
+                    console.log(c)
+                }
+            }
+        }
+    </script>
+</body>
+</html>
